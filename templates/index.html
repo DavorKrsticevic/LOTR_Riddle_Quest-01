@@ -1,15 +1,59 @@
-<html>
-    <head>
-        <title>Lord Of The Rings - Riddle Quest</title>
-    </head>
-    <body>
-        <nav>
-        <ul>
-            <li><a href="{{ url_for ('index') }}">Welcome page</a></li>
-            <li><a href="{{ url_for ('game') }}">Game Page</a></li>
-            <li><a href="{{ url_for ('final_score') }}">Final score</a></li>
-        </ul>
-    </nav>
-        <h1>This is the "Welcome Page"</h1>
-    </body>
-</html>
+{% extends 'base.html' %} 
+{% block content %}
+<body class="background">
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-4">Lord Of The Rings Riddle Quest</h1> 
+    <p>Wellcome to Riddle Quest</p> 
+  </div>
+  <div class="container-fluid">
+    <div class="row justify-content-around heroes01">
+      <div class="col-4 col-lg-1 imgleft01">
+        <img class="img-fluid circle" src="static/img/aragorn01.jpg">
+      </div>
+      <div class="col-4 col-lg-1">
+        <img class="img-fluid circle" src="static/img/gandalf01.jpg">
+      </div>
+      <div class="col-4 col-lg-1">
+        <img class="img-fluid circle" src="static/img/gimli01.jpg">
+      </div>
+      <div class="col-4 col-lg-1">
+        <img class="img-fluid circle" src="static/img/legolas01.jpg">
+      </div>
+      <div class="col-4 col-lg-1">
+        <img class="img-fluid circle" src="static/img/boromir01.jpg">
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="container">
+      <div class="row justify-content-around heroes02">
+        <div class="col-4 col-lg-1">
+          <img class="img-fluid circle" src="static/img/merry01.jpg">
+        </div>
+        <div class="col-4 col-lg-1">
+          <img class="img-fluid circle" src="static/img/pippin01.jpg">
+        </div>
+        <div class="col-4 col-lg-1">
+          <img class="img-fluid circle" src="static/img/frodo01.jpg">
+        </div>
+        <div class="col-4 col-lg-1">
+          <img class="img-fluid circle" src="static/img/sam01.jpg">
+        </div>
+      </div>
+    </div>
+  </div>  
+  <div class="container">
+    <div class="row d-flex justify-content-center"">
+        <div class="col-md-4 col-md-offset-4">
+            <form class="form">
+                <label for="name">Please Write down your name</label>
+                <input type="name" class="form-control" id="name_input">
+            </form>
+        </div>
+    </div>
+  </div>
+</div>
+</body>
+{% endblock %}
+

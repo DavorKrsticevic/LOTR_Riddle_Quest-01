@@ -1,0 +1,121 @@
+@font-face{ 
+	font-family: 'LOTR_Font_Header';
+	src: url('/static/fonts/webfontkit-LOTR/01.woff') format('woff'),
+	     url('/static/fonts/webfontkit-LOTR/01.TTF') format('truetype'),
+	     url('/static/fonts/webfontkit-LOTR/01.woff2') format('woff2');
+}
+p {
+    color: white;
+}
+.background {
+	background-image:url('/static/img/background_index.jpg');
+	background-size:cover;
+}
+.jumbotron {
+   background: rgba(0, 0, 0, 0.4);
+   text-align: center;
+   font-family: 'LOTR_Font_Header';
+   color: white;
+   padding: 2px;
+}
+.circle {
+    border-radius: 50%;
+    border: 2px solid gold;
+}
+@font-face { 
+font-family: 'OpenSymbol';
+src: url('font/OpenSymbol.woff') format('woff');
+}
+.user_score{
+    background-color: white;
+    margin-top: 50px;
+    height: 300px;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    font-family: 'LOTR_Font_Header';
+    color: white;
+    border-radius: 10%;
+}
+.riddle{
+    background-color: white;
+    margin-top: 50px;
+    height: 300px;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    color: white;
+    border-radius: 5%;
+}
+.riddle > p {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   height: 300px;
+   font-family: 'Italianno', cursive;
+   color: #F7F268;
+}
+.total_score{
+    background-color: white;
+    margin-top: 50px;
+    height: 300px;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    font-family: 'LOTR_Font_Header';
+    color: white;
+    border-radius: 10%;
+    
+}
+.game_form {
+    text-align: center;
+    color: white;
+    font-family: 'LOTR_Font_Header';
+    margin-top: 20px;
+}
+input { 
+    text-align: center; 
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #f5f5f5;
+}
+.user_avatar_in_game {
+    margin:10px auto;
+    width: 65px;
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 60px;
+}
+.progress {
+    background-image: url('/static/img/progress_map.jpg');
+    height: 60px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-top-style: solid;
+    border-top-width: 2px;
+    border-top-color: gold;
+    border-bottom-color: gold;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+.game_containers {
+    margin-top: 10px;
+    
+}
+#table{
+    margin-top: 50px;
+    font-family: 'LOTR_Font_Header';
+    color: white;
+    text-align: center;
+}
+.heroes01 {
+    margin-top: 100px;
+}
+.heroes02 {
+    margin-top: 20px;
+}

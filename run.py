@@ -14,7 +14,11 @@ def game():
     
 @app.route('/final_score')
 def final_score():
-    return render_template("final_score.html")   
+    return render_template("final_score.html") 
+    
+@app.route('/contact')
+def contact():
+    return render_template("contact.html")
     
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
