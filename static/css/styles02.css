@@ -68,7 +68,7 @@ src: url('font/OpenSymbol.woff') format('woff');
     text-align: center;
     color: white;
     font-family: 'LOTR_Font_Header';
-    margin-top: 20px;
+    margin-top: 10px;
 }
 input { 
     text-align: center; 
@@ -107,15 +107,34 @@ body {
     margin-top: 10px;
     
 }
-#table{
+#table01{
     margin-top: 50px;
     font-family: 'LOTR_Font_Header';
     color: white;
     text-align: center;
+}
+.table02{
+    font-family: 'LOTR_Font_Header';
+    color: white;
+    text-align: center;
+    float: none;
+    margin: 100px auto auto auto;
+    border-radius: 5%;
 }
 .heroes01 {
     margin-top: 100px;
 }
 .heroes02 {
     margin-top: 20px;
+}
+.final_score02{
+    background-color: white;
+    height: 300px;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    font-family: 'LOTR_Font_Header';
+    color: white;
+    border-radius: 10%;
+    float: none;
+    margin: 0 auto;
 }
