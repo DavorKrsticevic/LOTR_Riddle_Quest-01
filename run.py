@@ -1,9 +1,11 @@
 import os
 from flask import Flask, render_template, request
+import json
 
 app = Flask(__name__)
 user_score = []
 user_list = []
+user_answer = []
 
 @app.route('/', methods = ["GET","POST"])
 def index():
@@ -12,9 +14,14 @@ def index():
     return render_template("index.html")
 
 
-@app.route('/game')
+@app.route('/game', methods = ["GET","POST"])
 def game():
-    return render_template("game_page.html", user_list = user_list)
+    data = []
+    with open ("data/riddles.json", "r") as jason_data:
+        data = json.load(jason_data)
+    if request.method == "POST":
+        user_answer.append(request.form["answer"])  
+    return render_template("game_page.html", user_list = user_list, riddles_data = data, user_answer=user_answer)
     
 @app.route('/final_score')
 def final_score():

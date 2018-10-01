@@ -1,0 +1,16 @@
+[{
+        "name": "Riddle01",
+        "riddle": "I sit on my throne,looking sick and old, But with help from Gandalf, again I feel bold.",
+        "answer": "Theoden"
+    },
+    {
+        "name": "Riddle02",
+        "riddle": "My weary eyes have seen many years, in Rivendell I live,to the Fellowship, I provide a council but hope I have yet to give.",
+        "answer": "Elrond"
+    },
+    {
+        "name": "Riddle03",
+        "riddle": "I like to eat mushroom and Ale I like to sip, I'm a troublesome lad when with my best friend Pip.",
+        "answer": "Merry"
+    }
+]    

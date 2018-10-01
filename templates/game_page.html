@@ -12,10 +12,7 @@
                 </div>
             </div>
             <div class="col-11 col-lg-5 riddle"> 
-                <p class="display-4">Voiceless it cries,
-                    Wingless flutters,<br>
-                    Toothless bites,
-                    Mouthless mutters.</p>
+                <p class="display-4"> {{ riddles_data [0]["riddle"] }} </p>
             </div>
             <div class="col-11 col-lg-3 total_score">
 
@@ -53,9 +50,9 @@
     <div class="container">
         <div class="row d-flex justify-content-center game_form">
             <div class="col-md-4 col-md-offset-4">
-                <form class="form">
+                <form class="form" method="POST">
                     <label for="name">Write down your answer</label>
-                    <input type="name" class="form-control" id="name_input">
+                    <input type="text" class="form-control" id="answer" name="answer">
                 </form>
             </div>
         </div>
