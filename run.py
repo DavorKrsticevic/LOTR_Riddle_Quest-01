@@ -7,18 +7,8 @@ app = Flask(__name__)
 user_list = []
 user_answer = []
 riddle_number = 0
-# user_correct = 0
-# user_wrong = 0
-
-		
-
-# def score_and_riddle_update():
-# 	if check_user_answer(user_answer) == True:
-#         	riddle_number + 1
-# 		user_correct + 1
-# 	if check_if_true_or_false == False:
-# 		user_wrong + 1
-
+user_correct = 0
+user_wrong = 0
 
 
 @app.route('/', methods = ["GET","POST"])
@@ -31,40 +21,33 @@ def index():
 @app.route('/game', methods = ["GET","POST"])
 def game():
     data = []
+    global riddle_number 
+    global user_correct 
+    global user_wrong 
+    
+    
     with open ("data/riddles.json", "r") as jason_data:
         data = json.load(jason_data)
     if request.method == "POST":
         user_answer.append(request.form["answer"])
         if user_answer [-1] == data[riddle_number]["answer"]:
-            print ("tocno")
+            riddle_number += 1
+            user_correct += 1
         else:
-            print ("pogresno")
-        
-    return render_template("game_page.html", user_list = user_list, riddles_data = data, user_answer=user_answer)
+            user_wrong += 1
+        print (riddle_number, user_correct, user_wrong)
+    return render_template("game_page.html", user_list = user_list, riddles_data = data, user_answer=user_answer, riddle_number=riddle_number)
     
 
 @app.route('/final_score')
 def final_score():
     return render_template("final_score.html") 
     
+    
 @app.route('/contact')
 def contact():
     return render_template("contact.html")
 
-
-
-def check_user_answer(user_answer):
-    data = []
-    with open ("data/riddles.json", "r") as jason_data:
-        data = json.load(jason_data)	
- 	if user_answer == data [riddle_number]["answer"]:
- 		return True
- 	else: 
- 		return False
-
-    print check_user_answer(user_answer)
-
-    print user_answer    
 
 
 if __name__ == '__main__':
