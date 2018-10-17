@@ -72,6 +72,7 @@ p {
 .circle {
     border-radius: 50%;
     border: 2px solid gold;
+    position: relative;
 }
 @font-face { 
 font-family: 'OpenSymbol';
@@ -120,6 +121,7 @@ src: url('font/OpenSymbol.woff') format('woff');
     color: white;
     font-family: 'LOTR_Font_Header';
     margin-top: 10px;
+    /*visibility: hidden;*/
 }
 input { 
     text-align: center; 
@@ -189,3 +191,7 @@ body {
     float: none;
     margin: 0 auto;
 }
+
+/*#animate {
+    color: white;
+}*/

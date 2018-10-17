@@ -9,6 +9,7 @@
         <!-- Latest compiled and minified JavaScript -->
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         
+        <script rel="text/javacsript" src="{{url_for('static', filename='JS/main.js') }}"></script>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/styles01.min.css') }}" type="text/css" >
         <link rel="stylesheet" href="{{ url_for('static', filename='css/styles02.css') }}" type="text/css" >
         <title>Lord Of The Rings - Riddle Quest</title>
@@ -28,10 +29,9 @@
                 </div>
             </div>
         </nav>
-        
 {% block content %} 
-
+    <script type=text/javascript src="{{ url_for('static', filename='JS/jquery.js') }}"></script> 
 {% endblock %}
-    
     </body>
+    
 </html>
