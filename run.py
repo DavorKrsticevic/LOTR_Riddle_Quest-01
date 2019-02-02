@@ -1,42 +1,44 @@
 import os
-from flask import Flask, render_template, request, redirect, session
+from flask import Flask, render_template, request, redirect
 import json
 
 app = Flask(__name__)
-app.secret_key = os.urandom(24)
-
 
 user_list = []
 user_answer = []
+riddle_number = 0
+user_correct = 0
+user_wrong = 0
+number = 1
 
 
-with open ("data/riddles.json", "r") as jason_data:
-        riddle_data = json.load(jason_data)
-
-@app.route('/', methods=["GET","POST"])
+@app.route('/', methods = ["GET","POST"])
 def index():
     if request.method == "POST":
         user_list.append(request.form["username"])
-        session['user_name'] = request.form['username']
-        session['riddle_number'] = 0
-        session['user_correct'] = 0
-        session['user_wrong'] = 0
         return redirect("/game")
     return render_template("index.html")
 
-@app.route('/game', methods=["GET","POST"])
+@app.route('/game', methods = ["GET","POST"])
 def game():
-
+    data = []
+    global riddle_number 
+    global user_correct 
+    global user_wrong 
+    
+    
+    with open ("data/riddles.json", "r") as jason_data:
+        data = json.load(jason_data)
     if request.method == "POST":
-        previous_riddle_number = session['riddle_number']
         user_answer.append(request.form["answer"])
-        if user_answer [-1] == riddle_data[previous_riddle_number]["answer"]:
-            session['riddle_number'] += 1
-            session['user_correct'] += 1
+        if user_answer [-1] == data[riddle_number]["answer"]:
+            riddle_number += 1
+            user_correct += 1
         else:
-            session['user_wrong'] += 1
-        print (session['riddle_number'], session['user_correct'], session['user_wrong'])
-    return render_template("game_page.html", user_name = session['user_name'], riddles_data = riddle_data, user_answer=user_answer, riddle_number=session['riddle_number'])
+            user_wrong += 1
+        print (riddle_number, user_correct, user_wrong)
+    return render_template("game_page.html", user_list = user_list, riddles_data = data, user_answer=user_answer, riddle_number=riddle_number,
+    user_correct=user_correct, user_wrong=user_wrong)
     
 
 @app.route('/final_score')
